@@ -5,8 +5,21 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        librefranklin: ['LibreFranklin'],
+      },
+      colors: {
+        primary: 'black'
+      },
+      screens: {
+        '3xl': '2000px',
+      },
+    },
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: [],
+  }
 }
 

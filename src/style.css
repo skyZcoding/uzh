@@ -1,3 +1,59 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "LibreFranklin";
+    src: url("./assets/fonts/LibreFranklin.ttf");
+  }
+
+@layer base {
+  html {
+    @apply font-librefranklin;
+  }
+
+  h1 {
+    @apply text-3xl lg:text-[40px] font-librefranklin font-semibold;
+  }
+
+  h2 {
+    @apply text-2xl font-librefranklin font-semibold;
+  }
+
+  h3 {
+    @apply text-xl font-librefranklin font-medium;
+  }
+
+  h4 {
+    @apply text-xl font-librefranklin;
+  }
+
+  p {
+    @apply font-librefranklin leading-[21px] font-normal;
+  }
+
+  a {
+    @apply cursor-pointer;
+  }
+
+  button {
+    @apply cursor-pointer font-librefranklin;
+  }
+
+  .normal-spacing {
+    @apply lg:px-16 xl:px-72 px-5;
+  }
+
+  .pseudo::before {
+    display: block;
+    content: attr(title);
+    font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

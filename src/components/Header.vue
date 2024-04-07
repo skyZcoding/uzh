@@ -83,11 +83,11 @@ onUnmounted(() => {
       </div>
       <div class="sm:flex hidden flex-row items-center">
         <div class="mx-4" v-for="link in links" :key="link.id">
-          <NuxtLink :to="link.link" class="inline-block text-[0]">
-            <p class="text-black text-lg pseudo hover:underline hover:font-bold" :title="link.title">
+          <router-link :to="link.link" class="inline-block text-[0] cursor-pointer">
+            <p class="text-black text-lg pseudo hover:underline hover:font-bold">
               {{ link.title }}
             </p>
-          </NuxtLink>
+          </router-link>
         </div>
       </div>
     </div>
@@ -106,7 +106,7 @@ onUnmounted(() => {
       <div class="flex flex-col justify-center">
         <div class="flex flex-col">
           <div class="my-4" v-for="link in links" :key="link.id">
-            <div @click="goTo(link.link)" class="inline-block text-[0]">
+            <div @click="goTo(link.link)" class="inline-block text-[0] cursor-pointer">
               <p class="text-primary font-normal text-[27px] pseudo hover:underline hover:font-semibold"
                 :title="link.title">
                 {{ link.title }}

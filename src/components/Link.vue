@@ -10,7 +10,7 @@ import { defineProps } from 'vue';
 
 const props = defineProps({
     title: String,
-    link: String,
+    link: { type: String, required: true },
     level: String,
 });
 

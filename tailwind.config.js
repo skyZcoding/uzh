@@ -10,7 +10,8 @@ export default {
         librefranklin: ['LibreFranklin'],
       },
       colors: {
-        primary: 'black'
+        primary: 'black',
+        secondary: '#0028a5',
       },
       screens: {
         '3xl': '2000px',

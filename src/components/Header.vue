@@ -5,12 +5,12 @@ import { onMounted, onUnmounted, reactive } from "vue";
 const router = useRouter();
 
 const links = [
-    {
-        id: 1,
-        title: "Home",
-        link: "/",
-    }
-]
+  {
+    id: 1,
+    title: "Home",
+    link: "/",
+  },
+];
 
 const state = reactive({
   isMenuOpen: false,
@@ -71,44 +71,70 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <header class="bg-white w-full z-20 top-0 shadow-lg" :class="state.isMenuOpen ? '' : 'fixed'">
-    <div class="flex flex-wrap justify-between h-[72px] normal-spacing py-4 items-center">
+  <header
+    class="bg-white w-full z-20 top-0 shadow-lg"
+    :class="state.isMenuOpen ? '' : 'fixed'"
+  >
+    <div
+      class="flex flex-wrap justify-between h-[72px] normal-spacing py-4 items-center"
+    >
       <div @click="goTo('/')" class="cursor-pointer">
-        <img src="/icons/uzh-logo.svg" 
-        class="h-10" />
+        <img src="/icons/uzh-logo.svg" class="h-10" />
       </div>
       <div class="sm:hidden flex" @click="changeState">
-        <img src="/icons/menu.svg" class="h-6" v-motion-pop
-          v-if="!state.isMenuOpen" />
+        <img
+          src="/icons/menu.svg"
+          class="h-6"
+          v-motion-pop
+          v-if="!state.isMenuOpen"
+        />
       </div>
       <div class="sm:flex hidden flex-row items-center">
         <div class="mx-4" v-for="link in links" :key="link.id">
-          <router-link :to="link.link" class="inline-block text-[0] cursor-pointer">
-            <p class="text-black text-lg pseudo hover:underline hover:font-bold">
+          <router-link
+            :to="link.link"
+            class="inline-block text-[0] cursor-pointer"
+          >
+            <p
+              class="text-black text-lg pseudo hover:underline hover:font-bold"
+            >
               {{ link.title }}
             </p>
           </router-link>
         </div>
       </div>
     </div>
-    <div v-if="state.isMenuOpen"
-      class="flex fixed top-0 left-0 w-screen h-full bg-white duration-400 z-40 p-5 overflow-x-hidden">
+    <div
+      v-if="state.isMenuOpen"
+      class="flex fixed top-0 left-0 w-screen h-full bg-white duration-400 z-40 p-5 overflow-x-hidden"
+    >
       <div class="absolute top-[16px] right-[20px]" @click="changeState">
-        <img src="/icons/close.svg" class="h-8" v-motion-pop
-          v-if="state.isMenuOpen" />
+        <img
+          src="/icons/close.svg"
+          class="h-8"
+          v-motion-pop
+          v-if="state.isMenuOpen"
+        />
       </div>
 
-      <div @click="goTo('/')" class="absolute top-[16px] left-[20px] cursor-pointer">
-        <img src="/icons/uzh-logo.svg"
-            class="h-10" />
+      <div
+        @click="goTo('/')"
+        class="absolute top-[16px] left-[20px] cursor-pointer"
+      >
+        <img src="/icons/uzh-logo.svg" class="h-10" />
       </div>
 
       <div class="flex flex-col justify-center">
         <div class="flex flex-col">
           <div class="my-4" v-for="link in links" :key="link.id">
-            <div @click="goTo(link.link)" class="inline-block text-[0] cursor-pointer">
-              <p class="text-primary font-normal text-[27px] pseudo hover:underline hover:font-semibold"
-                :title="link.title">
+            <div
+              @click="goTo(link.link)"
+              class="inline-block text-[0] cursor-pointer"
+            >
+              <p
+                class="text-primary font-normal text-[27px] pseudo hover:underline hover:font-semibold"
+                :title="link.title"
+              >
                 {{ link.title }}
               </p>
             </div>

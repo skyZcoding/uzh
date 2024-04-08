@@ -19,6 +19,15 @@
             </div>
         </div>
 
-        
+        <div class="flex flex-row gap-4 mt-2">
+            <div class="flex flex-row items-center">
+                <img src="/icons/work.svg" class="h-4 w-4 mr-2" />
+                <p class="text-sm">Entwickler</p>
+            </div>
+            <div class="flex flex-row items-center">
+                <img src="/icons/dollar.svg" class="h-4 w-4 mr-2" />
+                <p class="text-sm">30CHF/h</p>
+            </div>
+        </div>
     </div>
 </template>

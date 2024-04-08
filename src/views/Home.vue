@@ -6,9 +6,7 @@
       nicht durch das bestehende Personal abgedeckt werden können. Insbesondere
       bei Events wird Unterstützung benötigt, beispielsweise beim Empfang, bei
       der Einlasskontrolle, Wegweisung oder Hörsaalbetreuung, bei Auf- und
-      Abbauarbeiten oder der Betreuung von Personen mit Beeinträchtigungen. Aber
-      auch ausserhalb von Events gibt es Arbeitsmöglichkeiten, beispielsweise
-      als Prüfungsaufsicht oder für administrative Arbeiten.
+      Abbauarbeiten oder der Betreuung von Personen mit Beeinträchtigungen.n 
     </p>
     <div class="flex flex-row mt-2 gap-6">
       <Link
@@ -41,12 +39,12 @@
       </p>
     </div>
     <div class="md:w-1/2 w-full flex flex-col justify-center">
-      <img src="/images/uzh-1.png" class="" />
+      <img src="/images/uzh-1.png" class="rounded-md" />
     </div>
   </div>
 
   <div class="mt-8 bg-slate-100">
-    <div class="pt-8 pb-8 flex flex-col md:flex-row normal-spacing gap-6">
+    <div class="pt-8 flex flex-col md:flex-row normal-spacing gap-6">
       <div class="md:w-1/2 w-full">
         <h2>Unsere Mission</h2>
         <p class="text-gray-600">
@@ -64,11 +62,24 @@
         </div>
       </div>
     </div>
+
+    <div class="pt-16 pb-16 normal-spacing">
+        <div class="flex flex-col">
+            <h2 class="mb-2">Studenten Job</h2>
+            <div class="flex flex-row gap-8">
+                <JobCard />
+                <JobCard />
+                <JobCard />
+            </div>
+        </div>
+
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import Link from "../components/Link.vue";
+import JobCard from "../components/JobCard.vue";
 
 const facts = [
   {

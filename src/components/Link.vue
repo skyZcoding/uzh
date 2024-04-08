@@ -14,5 +14,5 @@ const props = defineProps({
     level: String,
 });
 
-
+const { title, link, level } = props;
 </script>

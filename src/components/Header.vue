@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
 import { onMounted, onUnmounted, reactive } from "vue";
+import HeaderLink from "../types/HeaderLink";
 
 const router = useRouter();
 
-const links = [
+const links: Array<HeaderLink> = [
   {
     id: 1,
     title: "Home",

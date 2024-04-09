@@ -2,8 +2,10 @@
 import JobCard from "../components/JobCard.vue";
 import Carousel from "../components/Carousel.vue";
 import TextImage from "../components/TextImage.vue";
+import Job from "../types/Job"
+import Fact from "../types/Fact"
 
-const jobs = [
+const jobs: Array<Job> = [
   {
     title: "Dozent für Geschichte",
     description:
@@ -60,7 +62,7 @@ const jobs = [
   },
 ];
 
-const facts = [
+const facts: Array<Fact> = [
   {
     title: "Teamwork",
     description: "Wir arbeiten in einem jungen und dynamischen Team",

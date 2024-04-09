@@ -5,7 +5,7 @@ import Jobs from '../views/Job/Jobs.vue';
 
 const routes = [
     { path: '/', component: Home, name: 'home'},
-    { path: '/job/:id', component: DetailJob, name: 'detailJob' },
+    { path: '/job/:id', component: DetailJob, name: 'detailJob', props: true },
     { path: '/jobs', component: Jobs, name: 'jobs' }
 ];
 

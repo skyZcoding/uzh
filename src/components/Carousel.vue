@@ -101,7 +101,7 @@ function onMouseMove(e: any) {
       <div
         v-for="index in statePosition.dots"
         :key="index"
-        class="cursor-pointer w-3 h-3 rounded-full mx-1 bg-secondary flex justify-center items-center"
+        class="cursor-pointer w-3 h-3 rounded-full mx-1 bg-primary flex justify-center items-center"
         @click="scrollWithDots(index - 1)"
       >
         <div

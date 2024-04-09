@@ -141,7 +141,7 @@ const facts: Array<Fact> = [
           </router-link>
         </div>
         <Carousel :list="jobs">
-          <JobCard class="flex-shrink-0 snap-start mx-5"
+          <JobCard class="flex-shrink-0 snap-start w-full sm:w-[20rem] mx-5"
             v-for="(job, index) in jobs"
             :key="index"
             :title="job.title"

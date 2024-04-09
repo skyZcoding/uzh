@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { useRouter } from "vue-router";
-import { onMounted, onUnmounted, reactive } from "vue";
+import { useRouter, useRoute } from "vue-router";
+import { onMounted, onUnmounted, reactive, watch } from "vue";
 import HeaderLink from "../types/HeaderLink";
+
+const route = useRoute();
 
 const router = useRouter();
 
@@ -38,6 +40,8 @@ function goTo(route: any) {
 }
 
 function hasScrolled() {
+  console.log("hasScrolled");
+
   const st = window.scrollY;
   const header = document.querySelector("header");
 
@@ -49,10 +53,13 @@ function hasScrolled() {
       st > state.navbarHeight &&
       !state.changedRoute
     ) {
+      console.log("scroll down");
       header.style.transition = "top 0.5s ease-out 0s";
       header.style.top = `-${state.navbarHeight}px`;
     } else {
-      if (st + window.innerHeight < document.body.clientHeight) {
+      console.log("scroll up");
+      if (st + window.innerHeight < document.body.clientHeight || state.changedRoute) {
+        console.log("scroll up - 2");
         header.style.transition = "top 1s cubic-bezier(0, 0.97, 0.58, 1) 0s";
         header.style.top = "0px";
       }
@@ -62,15 +69,26 @@ function hasScrolled() {
   state.lastScrollTop = st;
 }
 
+watch(
+  () => route.fullPath,
+  async () => {
+    state.changedRoute = true;
+    hasScrolled();
+    state.changedRoute = false;
+  }
+);
+
 onMounted(() => {
   window.addEventListener("scroll", function () {
     state.didScroll = true;
   });
 
+  state.changedRoute = true;
   state.interval = setInterval(function () {
     if (state.didScroll) {
       hasScrolled();
       state.didScroll = false;
+      state.changedRoute = false;
     }
   }, 250);
 });

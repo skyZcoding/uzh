@@ -2,6 +2,7 @@
 import Link from "../components/Link.vue";
 import JobCard from "../components/JobCard.vue";
 import Carousel from "../components/Carousel.vue";
+import TextImage from "../components/TextImage.vue";
 
 const jobs = [1, 1, 1, 1, 1, 1];
 const facts = [
@@ -29,48 +30,23 @@ const facts = [
 </script>
 
 <template>
-  <div class="pt-16 normal-spacing flex flex-col justify-center items-center">
-    <h1 class="mb-2 text-center">Dein nächster Job</h1>
-    <p class="text-center text-gray-600 w-1/2">
-      An der Universität Zürich gibt es immer wieder temporäre Arbeiten, welche
-      nicht durch das bestehende Personal abgedeckt werden können. Insbesondere
-      bei Events wird Unterstützung benötigt, beispielsweise beim Empfang, bei
-      der Einlasskontrolle, Wegweisung oder Hörsaalbetreuung, bei Auf- und
-      Abbauarbeiten oder der Betreuung von Personen mit Beeinträchtigungen.n
-    </p>
-    <div class="flex flex-row mt-2 gap-6">
-      <Link
-        title="Wer sind wir"
-        link="/about"
-        level="primary"
-        class="w-[8rem]"
-      />
-      <Link
-        title="Kontakt"
-        link="/contact"
-        level="secondary"
-        class="w-[8rem]"
-      />
-    </div>
+  <div class="pt-16 normal-spacing">
+    <TextImage 
+        title="Dein nächster Job"
+        description="An der Universität Zürich gibt es immer wieder temporäre Arbeiten, welche nicht durch das bestehende Personal abgedeckt werden können. Insbesondere bei Events wird Unterstützung benötigt, beispielsweise beim Empfang, bei der Einlasskontrolle, Wegweisung oder Hörsaalbetreuung, bei Auf- und Abbauarbeiten oder der Betreuung von Personen mit Beeinträchtigungen."
+        image="/images/uzh-1.png"
+        :link="{ link: '/about', title: 'Wer sind wir' }"
+    />
   </div>
 
-  <div class="pt-16 flex flex-col-reverse md:flex-row-reverse normal-spacing">
-    <div class="md:w-1/2 w-full flex flex-col justify-center md:ml-6">
-      <h2>Wie funktioniert es?</h2>
-      <p class="text-gray-600">
-        Auf unserer Online-Plattform bieten wir mit Campus Jobs eine zentrale
-        Dienstleistung an, bei welcher Organisationseinheiten der UZH
-        selbstständig kleine, einmalige und stundenbasierte
-        Unterstützungsarbeiten ausschreiben können. Studierende erstellen auf
-        dem Eventportal ein Profil und können sich auf diese Jobs bewerben (für
-        bestimmte Jobtypen ist eine Schulung notwendig). Nach dem Arbeitseinsatz
-        werden die Studierenden bezahlt und können sich je nach Interesse und
-        Verfügbarkeit für einen nächsten Campus Job bewerben.
-      </p>
-    </div>
-    <div class="md:w-1/2 w-full flex flex-col justify-center">
-      <img src="/images/uzh-1.png" class="rounded-md" />
-    </div>
+  <div class="pt-16 normal-spacing">
+    <TextImage 
+        title="Wie funktioniert es?"
+        description="Auf unserer Online-Plattform bieten wir mit Campus Jobs eine zentrale Dienstleistung an, bei welcher Organisationseinheiten der UZH selbstständig kleine, einmalige und stundenbasierte Unterstützungsarbeiten ausschreiben können. Studierende erstellen auf dem Eventportal ein Profil und können sich auf diese Jobs bewerben (für bestimmte Jobtypen ist eine Schulung notwendig). Nach dem Arbeitseinsatz werden die Studierenden bezahlt und können sich je nach Interesse und Verfügbarkeit für einen nächsten Campus Job bewerben."
+        image="/images/uzh-1.png"
+        :reverse="true"
+        :link="{ link: '/contact', title: 'Kontaktieren' }"
+    />
   </div>
 
   <div class="mt-8 bg-slate-100">

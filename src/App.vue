@@ -4,7 +4,7 @@ import Header from "./components/Header.vue"
 
 <template>
   <Header />
-  <div class="mt-24">
+  <div class="mt-[72px] min-h-screen">
     <router-view />
   </div>
 </template>

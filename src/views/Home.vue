@@ -98,10 +98,10 @@ const facts = [
         <div class="mb-4 flex flex-row justify-between min-w-[24rem]">
           <h2>Studenten Jobs</h2>
 
-          <router-link to="/jobs" class="text-primary font-semibold">
+          <router-link to="/jobs" class="group">
             <div class="flex flex-row items-center">
-              <p>Alle Jobs</p>
-              <img src="/icons/arrow-right.svg" class="h-4 ml-2" />
+              <p class="group-hover:text-secondary duration-200">Alle Jobs</p>
+              <img src="/icons/arrow-right.svg" class="h-4 ml-2 text-primary group-hover:text-secondary duration-200" />
             </div>
           </router-link>
         </div>

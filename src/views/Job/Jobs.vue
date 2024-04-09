@@ -120,7 +120,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="pt-16 w-full flex justify-center items-center">
+    <div class="pt-16 w-full flex justify-center items-center normal-spacing">
         <h1 class="text-3xl font-bold text-center" v-motion-slide-visible-top>
             Campus Jobs <br />
             Entdecke <span class="text-secondary">deine</span> Karriereoptionen

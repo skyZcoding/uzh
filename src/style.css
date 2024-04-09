@@ -41,7 +41,7 @@
   }
 
   .normal-spacing {
-    @apply lg:px-16 xl:px-72 px-5;
+    @apply lg:px-8 xl:px-12 px-5;
   }
 
   .pseudo::before {

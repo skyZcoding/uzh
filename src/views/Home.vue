@@ -1,3 +1,33 @@
+<script setup lang="ts">
+import Link from "../components/Link.vue";
+import JobCard from "../components/JobCard.vue";
+import Carousel from "../components/Carousel.vue";
+
+const jobs = [1, 1, 1, 1, 1, 1];
+const facts = [
+  {
+    title: "Teamwork",
+    description: "Wir arbeiten in einem jungen und dynamischen Team",
+    icon: "/icons/teamwork.svg",
+  },
+  {
+    title: "Flexibilität",
+    description: "Wir bieten flexible Arbeitszeiten",
+    icon: "/icons/flexibility.svg",
+  },
+  {
+    title: "Wissbegierig",
+    description: "Wir sind immer auf der Suche nach neuen Talenten",
+    icon: "/icons/curious.svg",
+  },
+  {
+    title: "Innovation",
+    description: "Wir sind innovativ und immer auf der Suche nach neuen Ideen",
+    icon: "/icons/innovation.svg",
+  },
+];
+</script>
+
 <template>
   <div class="pt-16 normal-spacing flex flex-col justify-center items-center">
     <h1 class="mb-2 text-center">Dein nächster Job</h1>
@@ -65,7 +95,7 @@
 
     <div class="pt-16 pb-16 normal-spacing">
       <div class="flex flex-col">
-        <div class="mb-2 flex flex-row justify-between">
+        <div class="mb-4 flex flex-row justify-between min-w-[24rem]">
           <h2>Studenten Jobs</h2>
 
           <router-link to="/jobs" class="text-primary font-semibold">
@@ -88,32 +118,4 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import Link from "../components/Link.vue";
-import JobCard from "../components/JobCard.vue";
-import Carousel from "../components/Carousel.vue";
 
-const jobs = [1, 1, 1, 1, 1, 1];
-const facts = [
-  {
-    title: "Teamwork",
-    description: "Wir arbeiten in einem jungen und dynamischen Team",
-    icon: "/icons/teamwork.svg",
-  },
-  {
-    title: "Flexibilität",
-    description: "Wir bieten flexible Arbeitszeiten",
-    icon: "/icons/flexibility.svg",
-  },
-  {
-    title: "Wissbegierig",
-    description: "Wir sind immer auf der Suche nach neuen Talenten",
-    icon: "/icons/curious.svg",
-  },
-  {
-    title: "Innovation",
-    description: "Wir sind innovativ und immer auf der Suche nach neuen Ideen",
-    icon: "/icons/innovation.svg",
-  },
-];
-</script>

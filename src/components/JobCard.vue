@@ -10,9 +10,10 @@ function goToJobDetail() {
 
 
 <template>
-    <div @click="goToJobDetail()" class="rounded-lg bg-white px-4 py-2 flex flex-col w-[24rem] shadow-lg cursor-pointer">
+    <div @click="goToJobDetail()" class="rounded-lg bg-white px-4 py-2 flex flex-col w-[24rem] shadow-lg 
+    cursor-pointer group duration-200 hover:border-secondary border-white border-2">
         <p class="mb-4 text-gray-500">Rektoratdienst</p>
-        <h2 class="mb-2">Junior Frontend Developer (Vue.js)</h2>
+        <h2 class="mb-2 group-hover:text-secondary duration-200">Junior Frontend Developer (Vue.js)</h2>
         <p class="text-gray-600">Wir suchen einen Junior Frontend Developer, der uns bei der Entwicklung von Webanwendungen unterstützt.</p>
 
         <div class="flex flex-row flex-wrap gap-4 mt-2">

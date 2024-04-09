@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { defineProps, toRefs } from 'vue';
 import Link from '../../components/Link.vue';
 
@@ -46,7 +46,7 @@ console.log(id.value);
                 </ul>
             </div>
             <div class="w-1/3 lg:w-1/5 flex flex-col">
-                <Link title="Bewerben" link="/apply" level="primary" class="w-full" />
+                <Link title="Bewerben" link="/apply/1" level="primary" class="w-full" />
                 <div class="flex flex-col mt-4">
                     <h3 class="mb-2">Details</h3>
                     <div class="flex flex-row items-center">

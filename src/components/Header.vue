@@ -75,7 +75,6 @@ watch(
     console.log("route changed");
     state.changedRoute = true;
     hasScrolled();
-    state.changedRoute = false;
   }
 );
 

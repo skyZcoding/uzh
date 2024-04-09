@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
+import { defineProps, toRefs } from 'vue';
 
 const props = defineProps({
     title: String,
@@ -14,5 +14,5 @@ const props = defineProps({
     level: String,
 });
 
-const { title, link, level } = props;
+const { title, link, level } = toRefs(props);
 </script>

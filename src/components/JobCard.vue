@@ -1,6 +1,17 @@
+<script setup lang="ts">
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+function goToJobDetail() {
+    router.push("/job/1");
+}
+</script>
+
+
 <template>
-    <div class="rounded-lg bg-white px-4 py-2 flex flex-col w-[24rem] shadow-lg">
-        <h4 class="mb-4">Rektoratdienst</h4>
+    <div @click="goToJobDetail()" class="rounded-lg bg-white px-4 py-2 flex flex-col w-[24rem] shadow-lg cursor-pointer">
+        <p class="mb-4 text-gray-500">Rektoratdienst</p>
         <h2 class="mb-2">Junior Frontend Developer (Vue.js)</h2>
         <p class="text-gray-600">Wir suchen einen Junior Frontend Developer, der uns bei der Entwicklung von Webanwendungen unterstützt.</p>
 

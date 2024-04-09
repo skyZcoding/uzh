@@ -6,7 +6,7 @@
       nicht durch das bestehende Personal abgedeckt werden können. Insbesondere
       bei Events wird Unterstützung benötigt, beispielsweise beim Empfang, bei
       der Einlasskontrolle, Wegweisung oder Hörsaalbetreuung, bei Auf- und
-      Abbauarbeiten oder der Betreuung von Personen mit Beeinträchtigungen.n 
+      Abbauarbeiten oder der Betreuung von Personen mit Beeinträchtigungen.n
     </p>
     <div class="flex flex-row mt-2 gap-6">
       <Link
@@ -24,8 +24,8 @@
     </div>
   </div>
 
-  <div class="pt-16 flex flex-col md:flex-row normal-spacing">
-    <div class="md:w-1/2 w-full flex flex-col justify-center md:mr-4">
+  <div class="pt-16 flex flex-col-reverse md:flex-row-reverse normal-spacing">
+    <div class="md:w-1/2 w-full flex flex-col justify-center md:ml-6">
       <h2>Wie funktioniert es?</h2>
       <p class="text-gray-600">
         Auf unserer Online-Plattform bieten wir mit Campus Jobs eine zentrale
@@ -64,15 +64,26 @@
     </div>
 
     <div class="pt-16 pb-16 normal-spacing">
-        <div class="flex flex-col">
-            <h2 class="mb-2">Studenten Job</h2>
-            <div class="flex flex-row gap-8">
-                <JobCard />
-                <JobCard />
-                <JobCard />
-            </div>
-        </div>
+      <div class="flex flex-col">
+        <div class="mb-2 flex flex-row justify-between">
+          <h2>Studenten Jobs</h2>
 
+          <router-link to="/jobs" class="text-primary font-semibold">
+            <div class="flex flex-row items-center">
+              <p>Alle Jobs</p>
+              <img src="/icons/arrow-right.svg" class="h-4 ml-2" />
+            </div>
+          </router-link>
+        </div>
+        <Carousel :list="jobs">
+          <JobCard class="flex-shrink-0 snap-start mx-5" />
+          <JobCard class="flex-shrink-0 snap-start mx-5" />
+          <JobCard class="flex-shrink-0 snap-start mx-5" />
+          <JobCard class="flex-shrink-0 snap-start mx-5" />
+          <JobCard class="flex-shrink-0 snap-start mx-5" />
+          <JobCard class="flex-shrink-0 snap-start mx-5" />
+        </Carousel>
+      </div>
     </div>
   </div>
 </template>
@@ -80,7 +91,9 @@
 <script setup lang="ts">
 import Link from "../components/Link.vue";
 import JobCard from "../components/JobCard.vue";
+import Carousel from "../components/Carousel.vue";
 
+const jobs = [1, 1, 1, 1, 1, 1];
 const facts = [
   {
     title: "Teamwork",

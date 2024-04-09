@@ -55,14 +55,13 @@ const jobs = [
     place: "Rektoratdienst",
     salary: "30CHF/h",
     type: "Entwickler",
-    tags: ["Fulltime", "Vue.js", "On Site"],
+    tags: ["Vollzeit", "Vue.js", "On Site"],
   },
 ];
 
 const state = reactive({
   tags: [
     { name: "Vue.js", selected: true },
-    { name: "Fulltime", selected: true },
     { name: "Remote", selected: true },
     { name: "On Site", selected: true },
     { name: "Teilzeit", selected: true },

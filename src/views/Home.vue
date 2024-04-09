@@ -88,6 +88,7 @@ const facts = [
 <template>
   <div class="pt-16 normal-spacing">
     <TextImage 
+        v-motion-slide-visible-right
         title="Dein nächster Job"
         description="An der Universität Zürich gibt es immer wieder temporäre Arbeiten, welche nicht durch das bestehende Personal abgedeckt werden können. Insbesondere bei Events wird Unterstützung benötigt, beispielsweise beim Empfang, bei der Einlasskontrolle, Wegweisung oder Hörsaalbetreuung, bei Auf- und Abbauarbeiten oder der Betreuung von Personen mit Beeinträchtigungen."
         image="/images/uzh-1.png"
@@ -97,6 +98,7 @@ const facts = [
 
   <div class="pt-16 normal-spacing">
     <TextImage 
+        v-motion-slide-visible-left
         title="Wie funktioniert es?"
         description="Auf unserer Online-Plattform bieten wir mit Campus Jobs eine zentrale Dienstleistung an, bei welcher Organisationseinheiten der UZH selbstständig kleine, einmalige und stundenbasierte Unterstützungsarbeiten ausschreiben können. Studierende erstellen auf dem Eventportal ein Profil und können sich auf diese Jobs bewerben (für bestimmte Jobtypen ist eine Schulung notwendig). Nach dem Arbeitseinsatz werden die Studierenden bezahlt und können sich je nach Interesse und Verfügbarkeit für einen nächsten Campus Job bewerben."
         image="/images/uzh-1.png"

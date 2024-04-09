@@ -134,7 +134,7 @@ onMounted(() => {
     </div>
     <div class="w-auto flex flex-col">
       <div class="flex flex-row justify-between mb-2">
-        <h3 class="font-semibold">{{ jobs.length + " Jobs" }}</h3>
+        <h3 class="font-semibold">{{ state.jobs.length + " Jobs" }}</h3>
       </div>
       <div class="grid grid-col-1 xl:grid-cols-2 2xl:grid-cols-3 gap-6">
         <JobCard

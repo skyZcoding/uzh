@@ -72,6 +72,7 @@ function hasScrolled() {
 watch(
   () => route.fullPath,
   async () => {
+    console.log("route changed");
     state.changedRoute = true;
     hasScrolled();
     state.changedRoute = false;

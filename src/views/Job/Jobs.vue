@@ -2,7 +2,7 @@
 import JobCard from "../../components/JobCard.vue";
 import { reactive, onMounted } from "vue";
 
-const jobs = [
+const jobs: Array<Job> = [
   {
     title: "Dozent für Geschichte",
     description:
@@ -59,7 +59,7 @@ const jobs = [
   },
 ];
 
-const state = reactive({
+const state: State = reactive({
   tags: [
     { name: "Vue.js", selected: true },
     { name: "Remote", selected: true },
@@ -81,6 +81,25 @@ const state = reactive({
   ],
   jobs: [],
 });
+
+interface Tag {
+  name: string;
+  selected: boolean;
+}
+
+interface State {
+  tags: Tag[];
+  jobs: Job[];
+}
+
+interface Job {
+  title: string;
+  description: string;
+  place: string;
+  salary: string;
+  type: string;
+  tags: string[];
+}
 
 function filterJobs(tag: any) {
   tag.selected = !tag.selected;
@@ -115,7 +134,7 @@ onMounted(() => {
         <div class="flex flex-row flex-wrap">
           <div
             v-for="tag in state.tags"
-            :key="tag"
+            :key="tag.name"
             class="px-2 py-[0.5px] rounded-full flex flex-row items-center mr-2 mb-2 cursor-pointer border-2 border-secondary"
             :class="
               tag.selected

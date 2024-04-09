@@ -7,7 +7,7 @@ const props = defineProps({
 
 const { list } = toRefs(props);
 
-const container = ref(null);
+const container = ref<HTMLDivElement>();
 const statePosition = reactive({
   dots: list.value.length - 2,
   position: 1,
@@ -19,13 +19,15 @@ const stateDrag = reactive({
 
 onMounted(() => {
   window.addEventListener("resize", () => {
-    statePosition.dots =
-      list.value.length -
-      Math.round(
-        container.value?.clientWidth /
-          (container.value?.scrollWidth / list.value.length)
-      ) +
-      1;
+    if (container.value) {
+      statePosition.dots =
+        list.value.length -
+        Math.round(
+          container.value?.clientWidth /
+            (container.value?.scrollWidth / list.value.length)
+        ) +
+        1;
+    }
   });
 
   if (container.value) {
@@ -38,11 +40,13 @@ onMounted(() => {
       1;
 
     container.value.addEventListener("scroll", () => {
-      statePosition.position =
-        Math.round(
-          (container.value?.scrollLeft / container.value?.scrollWidth) *
-            list.value.length
-        ) + 1;
+      if (container.value) {
+        statePosition.position =
+          Math.round(
+            (container.value?.scrollLeft / container.value?.scrollWidth) *
+              list.value.length
+          ) + 1;
+      }
     });
   }
 });

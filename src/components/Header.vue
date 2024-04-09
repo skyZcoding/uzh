@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { useRouter, useRoute } from "vue-router";
-import { onMounted, onUnmounted, reactive, watch } from "vue";
+import { useRouter } from "vue-router";
+import { onMounted, onUnmounted, reactive } from "vue";
 
 const router = useRouter();
-const route = useRoute();
 
 const links = [
   {
@@ -15,7 +14,7 @@ const links = [
     id: 2,
     title: "Jobs",
     link: "/jobs",
-  }
+  },
 ];
 
 const state = reactive({
@@ -44,7 +43,11 @@ function hasScrolled() {
   if (Math.abs(state.lastScrollTop - st) <= state.delta) return;
 
   if (header) {
-    if ((st > state.lastScrollTop && st > state.navbarHeight) && !state.changedRoute) {
+    if (
+      st > state.lastScrollTop &&
+      st > state.navbarHeight &&
+      !state.changedRoute
+    ) {
       header.style.transition = "top 0.5s ease-out 0s";
       header.style.top = `-${state.navbarHeight}px`;
     } else {

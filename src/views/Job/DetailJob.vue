@@ -8,7 +8,7 @@ const props = defineProps({
 
 const { id } = toRefs(props);
 
-console.log(id.value);
+console.log(id);
 </script>
 
 <template>

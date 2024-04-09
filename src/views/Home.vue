@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Link from "../components/Link.vue";
 import JobCard from "../components/JobCard.vue";
 import Carousel from "../components/Carousel.vue";
 import TextImage from "../components/TextImage.vue";

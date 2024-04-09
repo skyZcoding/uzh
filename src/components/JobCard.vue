@@ -8,7 +8,7 @@ const props = defineProps({
   place: String,
   salary: String,
   type: String,
-  tags: Array,
+  tags: Array<string>,
 });
 
 const { title, description, place, salary, type, tags } = toRefs(props);

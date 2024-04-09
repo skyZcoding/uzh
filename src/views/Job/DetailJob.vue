@@ -15,7 +15,7 @@ console.log(id);
     <div class="pt-16 normal-spacing">
         <h1>Frontend Developer (Vue.js)</h1>
         <div class="flex flex-col-reverse sm:flex-row justify-start mt-8">
-            <div class="w-2/3 lg:w-4/5 sm:pr-4">
+            <div class="w-full sm:w-2/3 lg:w-4/5 sm:pr-4">
                 <h2 class="mb-2">Beschreibung</h2>
                 <p class="text-gray-600">
                     Für unseren Kunden, ein erfolgreich geführtes Technologieunternehmen, welches sich auf die Entwicklung von innovativen Softwareprodukten spezialisiert, suchen wir für den Sitz in Zürich einen motivierten, selbstständigen und zuverlässigen C#-Entwickler. Bist du eine ambitionierte Person, welche gerne den Einstieg in eine der führenden Unternehmungen der Technologiebranche machen will? - Dann freuen wir uns auf Deine Bewerbung.
@@ -45,7 +45,7 @@ console.log(id);
                     <li>Vielseitige Weiterbildungsmöglichkeiten</li>
                 </ul>
             </div>
-            <div class="w-1/3 sm:mb-0 mb-4 lg:w-1/5 flex flex-col">
+            <div class="w-2/3 sm:mb-0 mb-4 lg:w-1/5 flex flex-col">
                 <Link title="Bewerben" link="/apply/1" level="primary" class="w-full" />
                 <div class="flex flex-col mt-4">
                     <h3 class="mb-2">Details</h3>

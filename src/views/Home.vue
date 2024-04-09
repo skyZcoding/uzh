@@ -130,7 +130,7 @@ const facts: Array<Fact> = [
 
     <div class="pt-16 pb-16 normal-spacing">
       <div class="flex flex-col">
-        <div class="mb-4 flex flex-row justify-between min-w-[24rem]">
+        <div class="mb-4 flex flex-row justify-between">
           <h2>Studenten Jobs</h2>
 
           <router-link to="/jobs" class="group">

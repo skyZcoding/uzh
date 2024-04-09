@@ -1,19 +1,104 @@
 <script setup lang="ts">
 import JobCard from "../../components/JobCard.vue";
-import { reactive } from "vue";
+import { reactive, onMounted } from "vue";
 
-const jobs = [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15];
+const jobs = [
+  {
+    title: "Dozent für Geschichte",
+    description:
+      "Das Fachbereich Geschichte sucht einen Dozenten, der Vorlesungen und Seminare zu verschiedenen Themen der Geschichte halten kann.",
+    place: "Hauptgebäude",
+    type: "Dozent",
+    tags: ["Geschichte", "Dozent", "Lehre", "Vollzeit"],
+    salary: "50CHF/h",
+  },
+  {
+    title: "Laborant - Chemie",
+    description:
+      "Das Institut für Chemie benötigt einen Laboranten, der bei Experimenten und Laborarbeiten in verschiedenen chemischen Projekten unterstützt.",
+    place: "Laboratorium",
+    type: "Laborant",
+    tags: ["Chemie", "Labor", "Befristet"],
+    salary: "40CHF/h",
+  },
+  {
+    title: "Studentischer Hilfskraft - Bibliothek",
+    description:
+      "Die Universitätsbibliothek sucht studentische Hilfskräfte, die bei der Ausleihe, Rückgabe und Organisation von Büchern und Materialien helfen.",
+    place: "Bibliothek",
+    type: "Werkstudent",
+    tags: ["Bibliothek", "Studentische Hilfskraft", "Teilzeit"],
+    salary: "25CHF/h",
+  },
+  {
+    title: "Forschungsassistent - Physik",
+    description:
+      "Das Physik-Institut sucht einen Forschungsassistenten, der bei experimentellen Physikprojekten mitwirkt und bei der Datenanalyse unterstützt.",
+    place: "Physik-Institut",
+    type: "Assistent",
+    tags: ["Physik", "Forschung", "Vollzeit"],
+    salary: "45CHF/h",
+  },
+  {
+    title: "Studentischer Hilfskraft - IT",
+    description:
+      "Das IT-Team sucht studentische Hilfskräfte, die bei der Wartung und Pflege von IT-Systemen und Anwendungen helfen.",
+    place: "IT-Abteilung",
+    type: "Werkstudent",
+    tags: ["IT", "Studentische Hilfskraft", "Teilzeit"],
+    salary: "30CHF/h",
+  },
+  {
+    title: "Junior Frontend Developer (Vue.js)",
+    description:
+      "Wir suchen einen Junior Frontend Developer, der uns bei der Entwicklung von Webanwendungen unterstützt.",
+    place: "Rektoratdienst",
+    salary: "30CHF/h",
+    type: "Entwickler",
+    tags: ["Fulltime", "Vue.js", "On Site"],
+  },
+];
+
 const state = reactive({
   tags: [
     { name: "Vue.js", selected: true },
     { name: "Fulltime", selected: true },
     { name: "Remote", selected: true },
+    { name: "On Site", selected: true },
+    { name: "Teilzeit", selected: true },
+    { name: "Vollzeit", selected: true },
+    { name: "Befristet", selected: true },
+    { name: "Chemie", selected: true },
+    { name: "Physik", selected: true },
+    { name: "Geschichte", selected: true },
+    { name: "Bibliothek", selected: true },
+    { name: "IT", selected: true },
+    { name: "Labor", selected: true },
+    { name: "Forschung", selected: true },
+    { name: "Studentische Hilfskraft", selected: true },
+    { name: "Assistent", selected: true },
+    { name: "Lehre", selected: true },
+    { name: "Dozent", selected: true },
   ],
+  jobs: [],
 });
 
 function filterJobs(tag: any) {
   tag.selected = !tag.selected;
+  getFilteredJobs();
 }
+
+function getFilteredJobs() {
+  state.jobs = jobs.filter((job) => {
+    return job.tags.some((tag) => {
+      return state.tags.find((t) => t.name === tag && t.selected);
+    });
+  });
+}
+
+onMounted(() => {
+  getFilteredJobs();
+});
 </script>
 
 <template>
@@ -25,13 +110,14 @@ function filterJobs(tag: any) {
           <div
             v-for="tag in state.tags"
             :key="tag"
-            class="px-2 py-[0.5px] bg-blue-500 bg-opacity-20 rounded-full flex flex-row items-center mr-2 mb-2 cursor-pointer"
+            class="px-2 py-[0.5px] rounded-full flex flex-row items-center mr-2 mb-2 cursor-pointer"
+            :class="
+              tag.selected
+                ? 'bg-secondary text-white'
+                : 'bg-slate-400 text-primary'
+            "
             @click="filterJobs(tag)"
           >
-            <div
-              :class="tag.selected ? 'bg-blue-500' : 'bg-white'"
-              class="rounded-full h-2 w-2 mr-2"
-            ></div>
             <p>{{ tag.name }}</p>
           </div>
         </div>
@@ -42,7 +128,16 @@ function filterJobs(tag: any) {
         <h3 class="font-semibold">{{ jobs.length + " Jobs" }}</h3>
       </div>
       <div class="grid grid-col-1 xl:grid-cols-2 2xl:grid-cols-3 gap-6">
-        <JobCard v-for="job in jobs" :key="job" />
+        <JobCard
+          v-for="(job, index) in state.jobs"
+          :key="index"
+          :title="job.title"
+          :description="job.description"
+          :place="job.place"
+          :salary="job.salary"
+          :type="job.type"
+          :tags="job.tags"
+        />
       </div>
     </div>
   </div>

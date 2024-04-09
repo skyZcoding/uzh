@@ -11,6 +11,11 @@ const links = [
     title: "Home",
     link: "/",
   },
+  {
+    id: 2,
+    title: "Jobs",
+    link: "/jobs",
+  }
 ];
 
 const state = reactive({

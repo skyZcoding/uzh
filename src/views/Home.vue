@@ -4,7 +4,63 @@ import JobCard from "../components/JobCard.vue";
 import Carousel from "../components/Carousel.vue";
 import TextImage from "../components/TextImage.vue";
 
-const jobs = [1, 1, 1, 1, 1, 1];
+const jobs = [
+  {
+    title: "Dozent für Geschichte",
+    description:
+      "Das Fachbereich Geschichte sucht einen Dozenten, der Vorlesungen und Seminare zu verschiedenen Themen der Geschichte halten kann.",
+    place: "Hauptgebäude",
+    type: "Dozent",
+    tags: ["Geschichte", "Dozent", "Lehre", "Vollzeit"],
+    salary: "50CHF/h",
+  },
+  {
+    title: "Laborant - Chemie",
+    description:
+      "Das Institut für Chemie benötigt einen Laboranten, der bei Experimenten und Laborarbeiten in verschiedenen chemischen Projekten unterstützt.",
+    place: "Laboratorium",
+    type: "Laborant",
+    tags: ["Chemie", "Labor", "Befristet"],
+    salary: "40CHF/h",
+  },
+  {
+    title: "Studentischer Hilfskraft - Bibliothek",
+    description:
+      "Die Universitätsbibliothek sucht studentische Hilfskräfte, die bei der Ausleihe, Rückgabe und Organisation von Büchern und Materialien helfen.",
+    place: "Bibliothek",
+    type: "Werkstudent",
+    tags: ["Bibliothek", "Studentische Hilfskraft", "Teilzeit"],
+    salary: "25CHF/h",
+  },
+  {
+    title: "Forschungsassistent - Physik",
+    description:
+      "Das Physik-Institut sucht einen Forschungsassistenten, der bei experimentellen Physikprojekten mitwirkt und bei der Datenanalyse unterstützt.",
+    place: "Physik-Institut",
+    type: "Assistent",
+    tags: ["Physik", "Forschung", "Vollzeit"],
+    salary: "45CHF/h",
+  },
+  {
+    title: "Studentischer Hilfskraft - IT",
+    description:
+      "Das IT-Team sucht studentische Hilfskräfte, die bei der Wartung und Pflege von IT-Systemen und Anwendungen helfen.",
+    place: "IT-Abteilung",
+    type: "Werkstudent",
+    tags: ["IT", "Studentische Hilfskraft", "Teilzeit"],
+    salary: "30CHF/h",
+  },
+  {
+    title: "Junior Frontend Developer (Vue.js)",
+    description:
+      "Wir suchen einen Junior Frontend Developer, der uns bei der Entwicklung von Webanwendungen unterstützt.",
+    place: "Rektoratdienst",
+    salary: "30CHF/h",
+    type: "Entwickler",
+    tags: ["Fulltime", "Vue.js", "On Site"],
+  },
+];
+
 const facts = [
   {
     title: "Teamwork",
@@ -82,12 +138,16 @@ const facts = [
           </router-link>
         </div>
         <Carousel :list="jobs">
-          <JobCard class="flex-shrink-0 snap-start mx-5" />
-          <JobCard class="flex-shrink-0 snap-start mx-5" />
-          <JobCard class="flex-shrink-0 snap-start mx-5" />
-          <JobCard class="flex-shrink-0 snap-start mx-5" />
-          <JobCard class="flex-shrink-0 snap-start mx-5" />
-          <JobCard class="flex-shrink-0 snap-start mx-5" />
+          <JobCard class="flex-shrink-0 snap-start mx-5"
+            v-for="(job, index) in jobs"
+            :key="index"
+            :title="job.title"
+            :description="job.description"
+            :place="job.place"
+            :salary="job.salary"
+            :type="job.type"
+            :tags="job.tags"
+          />
         </Carousel>
       </div>
     </div>

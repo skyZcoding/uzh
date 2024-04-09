@@ -14,7 +14,7 @@ console.log(id);
 <template>
     <div class="pt-16 normal-spacing">
         <h1>Frontend Developer (Vue.js)</h1>
-        <div class="flex flex-row justify-start mt-8">
+        <div class="flex flex-col sm:flex-row justify-start mt-8">
             <div class="w-2/3 lg:w-4/5 pr-4">
                 <h2 class="mb-2">Beschreibung</h2>
                 <p class="text-gray-600">

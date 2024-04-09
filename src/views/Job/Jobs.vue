@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import JobCard from "../../components/JobCard.vue";
 import { reactive, onMounted } from "vue";
+import Job from "../../types/Job";
+import JobState from "../../types/JobState";
+
 
 const jobs: Array<Job> = [
   {
@@ -59,7 +62,7 @@ const jobs: Array<Job> = [
   },
 ];
 
-const state: State = reactive({
+const state: JobState = reactive({
   tags: [
     { name: "Vue.js", selected: true },
     { name: "Remote", selected: true },
@@ -82,25 +85,6 @@ const state: State = reactive({
   jobs: [],
 });
 
-interface Tag {
-  name: string;
-  selected: boolean;
-}
-
-interface State {
-  tags: Tag[];
-  jobs: Job[];
-}
-
-interface Job {
-  title: string;
-  description: string;
-  place: string;
-  salary: string;
-  type: string;
-  tags: string[];
-}
-
 function filterJobs(tag: any) {
   tag.selected = !tag.selected;
   getFilteredJobs();
@@ -120,12 +104,12 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="pt-16 w-full flex justify-center items-center normal-spacing">
-        <h1 class="text-3xl font-bold text-center" v-motion-slide-visible-top>
-            Campus Jobs <br />
-            Entdecke <span class="text-secondary">deine</span> Karriereoptionen
-        </h1>
-    </div>
+  <div class="pt-16 w-full flex justify-center items-center normal-spacing">
+    <h1 class="text-3xl font-bold text-center" v-motion-slide-visible-top>
+      Campus Jobs <br />
+      Entdecke <span class="text-secondary">deine</span> Karriereoptionen
+    </h1>
+  </div>
 
   <div class="pt-16 normal-spacing flex flex-col sm:flex-row">
     <div class="w-fit">

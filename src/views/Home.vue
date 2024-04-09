@@ -85,7 +85,7 @@ const facts = [
       <div class="md:w-1/2 w-full grid grid-cols-1 md:grid-cols-2 gap-4">
         <div v-for="(fact, index) in facts" :key="index">
           <div class="flex flex-col items-center">
-            <img :src="fact.icon" class="h-16 mb-6" />
+            <img :src="fact.icon" class="h-16 mb-6" v-motion-pop-visible />
             <h3 class="mb-4">{{ fact.title }}</h3>
             <p class="text-center">{{ fact.description }}</p>
           </div>

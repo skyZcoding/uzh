@@ -23,19 +23,21 @@ function goToJobDetail() {
 <template>
   <div
     @click="goToJobDetail()"
-    class="rounded-lg bg-white px-4 py-2 flex flex-col w-[20rem] shadow-lg cursor-pointer group duration-200 hover:border-secondary border-white border-2"
+    class="rounded-lg bg-white px-4 py-2 flex flex-col justify-between w-[20rem] shadow-lg cursor-pointer group duration-200 hover:border-secondary border-white border-2"
   >
-    <p class="mb-4 text-gray-500">{{ place }}</p>
-    <h2 class="mb-2 group-hover:text-secondary duration-200">{{ title }}</h2>
-    <p class="text-gray-600">{{ description }}</p>
+    <div class="flex flex-col">
+      <p class="mb-4 text-gray-500">{{ place }}</p>
+      <h2 class="mb-2 group-hover:text-secondary duration-200">{{ title }}</h2>
+      <p class="text-gray-600">{{ description }}</p>
 
-    <div class="flex flex-row flex-wrap gap-4 mt-2">
-      <div
-        v-for="tag in tags"
-        :key="tag"
-        class="px-2 py-[0.5px] bg-slate-400 bg-opacity-20 rounded-full flex flex-row items-center"
-      >
-        <p>{{ tag }}</p>
+      <div class="flex flex-row flex-wrap gap-4 mt-2">
+        <div
+          v-for="tag in tags"
+          :key="tag"
+          class="px-2 py-[0.5px] bg-slate-400 bg-opacity-20 rounded-full flex flex-row items-center"
+        >
+          <p>{{ tag }}</p>
+        </div>
       </div>
     </div>
 

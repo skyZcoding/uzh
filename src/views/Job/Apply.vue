@@ -11,8 +11,8 @@ console.log(id);
 </script>
 
 <template>
-  <div class="flex justify-center items-center pt-16">
-    <div class="w-1/2">
+  <div class="flex normal-spacing justify-center items-center pt-16">
+    <div class="w-full sm:w-1/2">
       <h1 class="text-4xl font-bold text-start">Bewerben</h1>
       <form class="mt-8">
         <div class="mb-4">

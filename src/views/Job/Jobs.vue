@@ -102,6 +102,13 @@ onMounted(() => {
 </script>
 
 <template>
+    <div class="pt-16 w-full flex justify-center items-center">
+        <h1 class="text-3xl font-bold text-center" v-motion-slide-visible-top>
+            Campus Jobs <br />
+            Entdecke <span class="text-secondary">deine</span> Karriereoptionen
+        </h1>
+    </div>
+
   <div class="pt-16 normal-spacing flex flex-col sm:flex-row">
     <div class="w-fit">
       <div class="w-[24rem]">
@@ -110,11 +117,11 @@ onMounted(() => {
           <div
             v-for="tag in state.tags"
             :key="tag"
-            class="px-2 py-[0.5px] rounded-full flex flex-row items-center mr-2 mb-2 cursor-pointer"
+            class="px-2 py-[0.5px] rounded-full flex flex-row items-center mr-2 mb-2 cursor-pointer border-2 border-secondary"
             :class="
               tag.selected
                 ? 'bg-secondary text-white'
-                : 'bg-slate-400 text-primary'
+                : 'bg-white text-secondary'
             "
             @click="filterJobs(tag)"
           >
